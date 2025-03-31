@@ -41,6 +41,8 @@
             pbYol = new PictureBox();
             label1 = new Label();
             lblKazanilanPuan = new Label();
+            label2 = new Label();
+            lblEnYuksekSkor = new Label();
             pnlYarisAlani.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).BeginInit();
@@ -116,9 +118,9 @@
             // 
             pbPatlama.BackColor = Color.Transparent;
             pbPatlama.Image = Properties.Resources.explosion;
-            pbPatlama.Location = new Point(493, 539);
+            pbPatlama.Location = new Point(479, 568);
             pbPatlama.Name = "pbPatlama";
-            pbPatlama.Size = new Size(65, 53);
+            pbPatlama.Size = new Size(109, 90);
             pbPatlama.SizeMode = PictureBoxSizeMode.Zoom;
             pbPatlama.TabIndex = 3;
             pbPatlama.TabStop = false;
@@ -171,12 +173,32 @@
             lblKazanilanPuan.TabIndex = 3;
             lblKazanilanPuan.Text = "0";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(40, 873);
+            label2.Name = "label2";
+            label2.Size = new Size(152, 28);
+            label2.TabIndex = 3;
+            label2.Text = "En Yüksek Skor :";
+            // 
+            // lblEnYuksekSkor
+            // 
+            lblEnYuksekSkor.AutoSize = true;
+            lblEnYuksekSkor.Location = new Point(198, 873);
+            lblEnYuksekSkor.Name = "lblEnYuksekSkor";
+            lblEnYuksekSkor.Size = new Size(23, 28);
+            lblEnYuksekSkor.TabIndex = 3;
+            lblEnYuksekSkor.Text = "0";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1120, 940);
+            Controls.Add(lblEnYuksekSkor);
             Controls.Add(lblKazanilanPuan);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pnlYarisAlani);
             Controls.Add(btnOyunuBaslat);
@@ -212,5 +234,7 @@
         private PictureBox pbPatlama;
         private Label label1;
         private Label lblKazanilanPuan;
+        private Label label2;
+        private Label lblEnYuksekSkor;
     }
 }
