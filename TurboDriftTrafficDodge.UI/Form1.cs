@@ -194,6 +194,8 @@ namespace TurboDriftTrafficDodge.UI
             kazanilanPuan = 0;
         }
 
+       
+
 
     }
 }
