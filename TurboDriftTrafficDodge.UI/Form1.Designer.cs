@@ -38,8 +38,9 @@
             pbPatlama = new PictureBox();
             pbArabam = new PictureBox();
             pbAraba1 = new PictureBox();
-            pbAraba5 = new PictureBox();
             pbYol = new PictureBox();
+            label1 = new Label();
+            lblKazanilanPuan = new Label();
             pnlYarisAlani.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).BeginInit();
@@ -47,13 +48,12 @@
             ((System.ComponentModel.ISupportInitialize)pbPatlama).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbArabam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbAraba5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbYol).BeginInit();
             SuspendLayout();
             // 
             // btnOyunuBaslat
             // 
-            btnOyunuBaslat.Location = new Point(618, 831);
+            btnOyunuBaslat.Location = new Point(551, 827);
             btnOyunuBaslat.Margin = new Padding(4);
             btnOyunuBaslat.Name = "btnOyunuBaslat";
             btnOyunuBaslat.Size = new Size(518, 96);
@@ -76,19 +76,18 @@
             pnlYarisAlani.Controls.Add(pbPatlama);
             pnlYarisAlani.Controls.Add(pbArabam);
             pnlYarisAlani.Controls.Add(pbAraba1);
-            pnlYarisAlani.Controls.Add(pbAraba5);
             pnlYarisAlani.Controls.Add(pbYol);
             pnlYarisAlani.Location = new Point(37, 12);
             pnlYarisAlani.Name = "pnlYarisAlani";
-            pnlYarisAlani.Size = new Size(1656, 789);
+            pnlYarisAlani.Size = new Size(1034, 789);
             pnlYarisAlani.TabIndex = 2;
             // 
             // pbAraba3
             // 
             pbAraba3.Image = Properties.Resources.araba7;
-            pbAraba3.Location = new Point(819, 122);
+            pbAraba3.Location = new Point(625, 92);
             pbAraba3.Name = "pbAraba3";
-            pbAraba3.Size = new Size(65, 136);
+            pbAraba3.Size = new Size(92, 191);
             pbAraba3.SizeMode = PictureBoxSizeMode.Zoom;
             pbAraba3.TabIndex = 3;
             pbAraba3.TabStop = false;
@@ -96,7 +95,7 @@
             // pbAraba2
             // 
             pbAraba2.Image = Properties.Resources.araba6;
-            pbAraba2.Location = new Point(428, 250);
+            pbAraba2.Location = new Point(279, 303);
             pbAraba2.Name = "pbAraba2";
             pbAraba2.Size = new Size(84, 186);
             pbAraba2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,9 +105,9 @@
             // pbAraba4
             // 
             pbAraba4.Image = Properties.Resources.araba3;
-            pbAraba4.Location = new Point(1147, 381);
+            pbAraba4.Location = new Point(883, 202);
             pbAraba4.Name = "pbAraba4";
-            pbAraba4.Size = new Size(65, 136);
+            pbAraba4.Size = new Size(81, 151);
             pbAraba4.SizeMode = PictureBoxSizeMode.Zoom;
             pbAraba4.TabIndex = 3;
             pbAraba4.TabStop = false;
@@ -117,7 +116,7 @@
             // 
             pbPatlama.BackColor = Color.Transparent;
             pbPatlama.Image = Properties.Resources.explosion;
-            pbPatlama.Location = new Point(819, 592);
+            pbPatlama.Location = new Point(493, 539);
             pbPatlama.Name = "pbPatlama";
             pbPatlama.Size = new Size(65, 53);
             pbPatlama.SizeMode = PictureBoxSizeMode.Zoom;
@@ -127,9 +126,9 @@
             // pbArabam
             // 
             pbArabam.Image = Properties.Resources.araba8;
-            pbArabam.Location = new Point(819, 616);
+            pbArabam.Location = new Point(493, 642);
             pbArabam.Name = "pbArabam";
-            pbArabam.Size = new Size(65, 136);
+            pbArabam.Size = new Size(79, 127);
             pbArabam.SizeMode = PictureBoxSizeMode.Zoom;
             pbArabam.TabIndex = 3;
             pbArabam.TabStop = false;
@@ -137,38 +136,48 @@
             // pbAraba1
             // 
             pbAraba1.Image = Properties.Resources.araba4;
-            pbAraba1.Location = new Point(109, 33);
+            pbAraba1.Location = new Point(90, 0);
             pbAraba1.Name = "pbAraba1";
             pbAraba1.Size = new Size(65, 136);
             pbAraba1.SizeMode = PictureBoxSizeMode.Zoom;
             pbAraba1.TabIndex = 3;
             pbAraba1.TabStop = false;
             // 
-            // pbAraba5
-            // 
-            pbAraba5.Image = Properties.Resources.araba2;
-            pbAraba5.Location = new Point(1427, 64);
-            pbAraba5.Name = "pbAraba5";
-            pbAraba5.Size = new Size(65, 136);
-            pbAraba5.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAraba5.TabIndex = 3;
-            pbAraba5.TabStop = false;
-            // 
             // pbYol
             // 
             pbYol.Image = Properties.Resources.yol;
-            pbYol.Location = new Point(3, -463);
+            pbYol.Location = new Point(3, -788);
             pbYol.Name = "pbYol";
-            pbYol.Size = new Size(1650, 1600);
+            pbYol.Size = new Size(1029, 1600);
             pbYol.SizeMode = PictureBoxSizeMode.StretchImage;
             pbYol.TabIndex = 0;
             pbYol.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 827);
+            label1.Name = "label1";
+            label1.Size = new Size(152, 28);
+            label1.TabIndex = 3;
+            label1.Text = "Kazanılan Puan :";
+            // 
+            // lblKazanilanPuan
+            // 
+            lblKazanilanPuan.AutoSize = true;
+            lblKazanilanPuan.Location = new Point(198, 827);
+            lblKazanilanPuan.Name = "lblKazanilanPuan";
+            lblKazanilanPuan.Size = new Size(23, 28);
+            lblKazanilanPuan.TabIndex = 3;
+            lblKazanilanPuan.Text = "0";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1741, 940);
+            ClientSize = new Size(1120, 940);
+            Controls.Add(lblKazanilanPuan);
+            Controls.Add(label1);
             Controls.Add(pnlYarisAlani);
             Controls.Add(btnOyunuBaslat);
             Font = new Font("Segoe UI", 12F);
@@ -176,6 +185,8 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
+            KeyUp += Form1_KeyUp;
             pnlYarisAlani.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAraba3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).EndInit();
@@ -183,9 +194,9 @@
             ((System.ComponentModel.ISupportInitialize)pbPatlama).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbArabam).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbAraba5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbYol).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -198,7 +209,8 @@
         private PictureBox pbAraba4;
         private PictureBox pbArabam;
         private PictureBox pbAraba1;
-        private PictureBox pbAraba5;
         private PictureBox pbPatlama;
+        private Label label1;
+        private Label lblKazanilanPuan;
     }
 }
