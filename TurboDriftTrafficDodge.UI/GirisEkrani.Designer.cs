@@ -96,7 +96,7 @@
             lblZorlukSeviyesi.Size = new Size(220, 41);
             lblZorlukSeviyesi.TabIndex = 0;
             // 
-            // Form2
+            // GirisEkrani
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -110,7 +110,7 @@
             Controls.Add(label1);
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
-            Name = "Form2";
+            Name = "GirisEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Araba Yarış Oyunu ";
             ((System.ComponentModel.ISupportInitialize)tbZorluk).EndInit();
