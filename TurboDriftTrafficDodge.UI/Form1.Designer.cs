@@ -38,8 +38,8 @@
             pbAraba3 = new PictureBox();
             pbAraba2 = new PictureBox();
             pbAraba4 = new PictureBox();
-            pbPatlama = new PictureBox();
             pbArabam = new PictureBox();
+            pbPatlama = new PictureBox();
             pbAraba1 = new PictureBox();
             pbYol = new PictureBox();
             label1 = new Label();
@@ -51,18 +51,18 @@
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbPatlama).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbArabam).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbPatlama).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbYol).BeginInit();
             SuspendLayout();
             // 
             // btnOyunuBaslat
             // 
-            btnOyunuBaslat.Location = new Point(551, 827);
+            btnOyunuBaslat.Location = new Point(771, 906);
             btnOyunuBaslat.Margin = new Padding(4);
             btnOyunuBaslat.Name = "btnOyunuBaslat";
-            btnOyunuBaslat.Size = new Size(518, 96);
+            btnOyunuBaslat.Size = new Size(300, 81);
             btnOyunuBaslat.TabIndex = 1;
             btnOyunuBaslat.Text = "Oyunu Başlat";
             btnOyunuBaslat.UseVisualStyleBackColor = true;
@@ -82,13 +82,13 @@
             pnlYarisAlani.Controls.Add(pbAraba3);
             pnlYarisAlani.Controls.Add(pbAraba2);
             pnlYarisAlani.Controls.Add(pbAraba4);
-            pnlYarisAlani.Controls.Add(pbPatlama);
             pnlYarisAlani.Controls.Add(pbArabam);
+            pnlYarisAlani.Controls.Add(pbPatlama);
             pnlYarisAlani.Controls.Add(pbAraba1);
             pnlYarisAlani.Controls.Add(pbYol);
             pnlYarisAlani.Location = new Point(37, 12);
             pnlYarisAlani.Name = "pnlYarisAlani";
-            pnlYarisAlani.Size = new Size(1034, 789);
+            pnlYarisAlani.Size = new Size(1034, 884);
             pnlYarisAlani.TabIndex = 2;
             // 
             // pbKupa
@@ -151,26 +151,26 @@
             pbAraba4.TabIndex = 3;
             pbAraba4.TabStop = false;
             // 
-            // pbPatlama
-            // 
-            pbPatlama.BackColor = Color.Transparent;
-            pbPatlama.Image = Properties.Resources.explosion;
-            pbPatlama.Location = new Point(479, 568);
-            pbPatlama.Name = "pbPatlama";
-            pbPatlama.Size = new Size(109, 90);
-            pbPatlama.SizeMode = PictureBoxSizeMode.Zoom;
-            pbPatlama.TabIndex = 3;
-            pbPatlama.TabStop = false;
-            // 
             // pbArabam
             // 
             pbArabam.Image = Properties.Resources.araba8;
-            pbArabam.Location = new Point(493, 642);
+            pbArabam.Location = new Point(484, 745);
             pbArabam.Name = "pbArabam";
             pbArabam.Size = new Size(79, 127);
             pbArabam.SizeMode = PictureBoxSizeMode.Zoom;
             pbArabam.TabIndex = 3;
             pbArabam.TabStop = false;
+            // 
+            // pbPatlama
+            // 
+            pbPatlama.BackColor = Color.Transparent;
+            pbPatlama.Image = Properties.Resources.explosion;
+            pbPatlama.Location = new Point(467, 649);
+            pbPatlama.Name = "pbPatlama";
+            pbPatlama.Size = new Size(109, 90);
+            pbPatlama.SizeMode = PictureBoxSizeMode.Zoom;
+            pbPatlama.TabIndex = 3;
+            pbPatlama.TabStop = false;
             // 
             // pbAraba1
             // 
@@ -185,9 +185,9 @@
             // pbYol
             // 
             pbYol.Image = Properties.Resources.yol;
-            pbYol.Location = new Point(3, -788);
+            pbYol.Location = new Point(5, -791);
             pbYol.Name = "pbYol";
-            pbYol.Size = new Size(1029, 1600);
+            pbYol.Size = new Size(1029, 1672);
             pbYol.SizeMode = PictureBoxSizeMode.StretchImage;
             pbYol.TabIndex = 0;
             pbYol.TabStop = false;
@@ -195,7 +195,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 827);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(40, 899);
             label1.Name = "label1";
             label1.Size = new Size(152, 28);
             label1.TabIndex = 3;
@@ -204,7 +205,8 @@
             // lblKazanilanPuan
             // 
             lblKazanilanPuan.AutoSize = true;
-            lblKazanilanPuan.Location = new Point(198, 827);
+            lblKazanilanPuan.ForeColor = SystemColors.Control;
+            lblKazanilanPuan.Location = new Point(198, 899);
             lblKazanilanPuan.Name = "lblKazanilanPuan";
             lblKazanilanPuan.Size = new Size(23, 28);
             lblKazanilanPuan.TabIndex = 3;
@@ -213,7 +215,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(40, 873);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(40, 945);
             label2.Name = "label2";
             label2.Size = new Size(152, 28);
             label2.TabIndex = 3;
@@ -222,7 +225,8 @@
             // lblEnYuksekSkor
             // 
             lblEnYuksekSkor.AutoSize = true;
-            lblEnYuksekSkor.Location = new Point(198, 873);
+            lblEnYuksekSkor.ForeColor = SystemColors.Control;
+            lblEnYuksekSkor.Location = new Point(198, 945);
             lblEnYuksekSkor.Name = "lblEnYuksekSkor";
             lblEnYuksekSkor.Size = new Size(23, 28);
             lblEnYuksekSkor.TabIndex = 3;
@@ -232,7 +236,8 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 940);
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(1134, 1013);
             Controls.Add(lblEnYuksekSkor);
             Controls.Add(lblKazanilanPuan);
             Controls.Add(label2);
@@ -242,6 +247,7 @@
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
@@ -252,8 +258,8 @@
             ((System.ComponentModel.ISupportInitialize)pbAraba3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbPatlama).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbArabam).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbPatlama).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbYol).EndInit();
             ResumeLayout(false);

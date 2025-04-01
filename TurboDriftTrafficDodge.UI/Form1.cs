@@ -36,6 +36,7 @@ namespace TurboDriftTrafficDodge.UI
             SesCal("oyunsesi.wav");
             KupaGoster(false);
             tmrHareket.Start();
+            btnOyunuBaslat.Visible = false;
         }
 
         private void tmrHareket_Tick(object sender, EventArgs e)
@@ -156,6 +157,7 @@ namespace TurboDriftTrafficDodge.UI
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
                 SesCal("kazasesi.wav");
+                btnOyunuBaslat.Visible = true;
 
                 //Patlama efekti ayarlarý
                 pbPatlama.Visible = true;
