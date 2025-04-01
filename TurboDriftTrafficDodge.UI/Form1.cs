@@ -1,4 +1,5 @@
 using System.Configuration;
+using System.Media;
 
 namespace TurboDriftTrafficDodge.UI
 {
@@ -21,6 +22,7 @@ namespace TurboDriftTrafficDodge.UI
         {
             pbPatlama.Visible = false;
             this.KeyPreview = true;
+            KupaGoster(false);
         }
 
         private void btnOyunuBaslat_Click(object sender, EventArgs e)
@@ -30,6 +32,8 @@ namespace TurboDriftTrafficDodge.UI
 
         private void OyunuBaslat()
         {
+            SesCal("oyunsesi.wav");
+            KupaGoster(false);
             tmrHareket.Start();
         }
 
@@ -127,6 +131,8 @@ namespace TurboDriftTrafficDodge.UI
             //Eðer benim arabam baþka bir araba yada engel ile ayný konuma girerse(çarparsa) oyun sonlanýr.
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
+                SesCal("kazasesi.wav");
+
                 //Patlama efekti ayarlarý
                 pbPatlama.Visible = true;
                 pbArabam.Controls.Add(pbPatlama); //Arabam nerdeyse patlama efektini oraya almak için
@@ -137,6 +143,8 @@ namespace TurboDriftTrafficDodge.UI
                 {
                     Settings1.Default.enYuksekSkor = Convert.ToInt32(lblKazanilanPuan.Text);
                     lblEnYuksekSkor.Text = lblKazanilanPuan.Text;
+                    lblEnYuksekSkorKupa.Text = lblKazanilanPuan.Text;
+                    KupaGoster(true);
                 }
 
                 tmrHareket.Stop();
@@ -147,15 +155,12 @@ namespace TurboDriftTrafficDodge.UI
                 {
                     YeniOyun();
                     OyunuBaslat();
-                   
                 }
                 else
                 {
                     Application.Exit();
                 }
             }
-
-
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -182,6 +187,7 @@ namespace TurboDriftTrafficDodge.UI
             }
         }
 
+
         private void YeniOyun()
         {
             pbArabam.Location = new Point(493, 642);
@@ -194,7 +200,29 @@ namespace TurboDriftTrafficDodge.UI
             kazanilanPuan = 0;
         }
 
-       
+        /// <summary>
+        /// Parametre olarak gönderilen ses adýný çalan metod (!Dosyanýn bulunduðu dizinde Sesler klasörünün içinde olmalý)
+        /// </summary>
+        /// <param name="ses"></param>
+        private void SesCal(string ses)
+        {
+            string sesDosyaYolu = Path.Combine(Application.StartupPath, "Sesler", ses);
+
+            SoundPlayer sp = new SoundPlayer(sesDosyaYolu);
+            sp.Play();
+        }
+
+        /// <summary>
+        /// Kupa ve en yüksek skor ile ilgili bilgilerin ve resimlerin görünürlüðünü ayarlayan metod
+        /// </summary>
+        /// <param name="gorunurluk"></param>
+        private void KupaGoster(bool gorunurluk)
+        {
+            pbKupa.Visible = gorunurluk;
+            lblEnYuksekSkorKupaYazisi.Visible = gorunurluk;
+            lblEnYuksekSkorKupa.Visible = gorunurluk;
+        }
+
 
 
     }

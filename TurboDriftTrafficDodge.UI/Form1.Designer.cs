@@ -32,6 +32,9 @@
             btnOyunuBaslat = new Button();
             tmrHareket = new System.Windows.Forms.Timer(components);
             pnlYarisAlani = new Panel();
+            pbKupa = new PictureBox();
+            lblEnYuksekSkorKupa = new Label();
+            lblEnYuksekSkorKupaYazisi = new Label();
             pbAraba3 = new PictureBox();
             pbAraba2 = new PictureBox();
             pbAraba4 = new PictureBox();
@@ -44,6 +47,7 @@
             label2 = new Label();
             lblEnYuksekSkor = new Label();
             pnlYarisAlani.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbKupa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba4).BeginInit();
@@ -72,6 +76,9 @@
             // pnlYarisAlani
             // 
             pnlYarisAlani.BackColor = SystemColors.ActiveCaptionText;
+            pnlYarisAlani.Controls.Add(pbKupa);
+            pnlYarisAlani.Controls.Add(lblEnYuksekSkorKupa);
+            pnlYarisAlani.Controls.Add(lblEnYuksekSkorKupaYazisi);
             pnlYarisAlani.Controls.Add(pbAraba3);
             pnlYarisAlani.Controls.Add(pbAraba2);
             pnlYarisAlani.Controls.Add(pbAraba4);
@@ -83,6 +90,36 @@
             pnlYarisAlani.Name = "pnlYarisAlani";
             pnlYarisAlani.Size = new Size(1034, 789);
             pnlYarisAlani.TabIndex = 2;
+            // 
+            // pbKupa
+            // 
+            pbKupa.Image = Properties.Resources.kupa;
+            pbKupa.Location = new Point(389, 38);
+            pbKupa.Name = "pbKupa";
+            pbKupa.Size = new Size(282, 311);
+            pbKupa.SizeMode = PictureBoxSizeMode.Zoom;
+            pbKupa.TabIndex = 4;
+            pbKupa.TabStop = false;
+            // 
+            // lblEnYuksekSkorKupa
+            // 
+            lblEnYuksekSkorKupa.AutoSize = true;
+            lblEnYuksekSkorKupa.ForeColor = SystemColors.ButtonHighlight;
+            lblEnYuksekSkorKupa.Location = new Point(594, 362);
+            lblEnYuksekSkorKupa.Name = "lblEnYuksekSkorKupa";
+            lblEnYuksekSkorKupa.Size = new Size(23, 28);
+            lblEnYuksekSkorKupa.TabIndex = 3;
+            lblEnYuksekSkorKupa.Text = "0";
+            // 
+            // lblEnYuksekSkorKupaYazisi
+            // 
+            lblEnYuksekSkorKupaYazisi.AutoSize = true;
+            lblEnYuksekSkorKupaYazisi.ForeColor = SystemColors.ButtonHighlight;
+            lblEnYuksekSkorKupaYazisi.Location = new Point(436, 362);
+            lblEnYuksekSkorKupaYazisi.Name = "lblEnYuksekSkorKupaYazisi";
+            lblEnYuksekSkorKupaYazisi.Size = new Size(152, 28);
+            lblEnYuksekSkorKupaYazisi.TabIndex = 3;
+            lblEnYuksekSkorKupaYazisi.Text = "En Yüksek Skor :";
             // 
             // pbAraba3
             // 
@@ -210,6 +247,8 @@
             KeyDown += Form1_KeyDown;
             KeyUp += Form1_KeyUp;
             pnlYarisAlani.ResumeLayout(false);
+            pnlYarisAlani.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbKupa).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba4).EndInit();
@@ -236,5 +275,8 @@
         private Label lblKazanilanPuan;
         private Label label2;
         private Label lblEnYuksekSkor;
+        private PictureBox pbKupa;
+        private Label lblEnYuksekSkorKupa;
+        private Label lblEnYuksekSkorKupaYazisi;
     }
 }
