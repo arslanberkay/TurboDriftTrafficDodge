@@ -13,8 +13,9 @@ namespace TurboDriftTrafficDodge.UI
         Random rnd = new Random();
 
         int kazanilanPuan = 0;
-        int arabaHareketHizi = 7;
-        int yolHizi = 7;
+        int arabalarinHareketHizi;
+        int arabaminHareketHizi = 10;
+        int yolHizi;
         bool sagHareket = false;
         bool solHareket = false;
 
@@ -43,26 +44,49 @@ namespace TurboDriftTrafficDodge.UI
             kazanilanPuan++;
             lblKazanilanPuan.Text = kazanilanPuan.ToString();
 
+            //Level sistemi
+            if (kazanilanPuan < 500)
+            {
+                arabalarinHareketHizi = 5;
+                yolHizi = 5;
+            }
+            else if (kazanilanPuan > 500 && kazanilanPuan < 1250)
+            {
+                arabalarinHareketHizi = 7;
+                yolHizi = 7;
+            }
+            else if (kazanilanPuan > 1250 && kazanilanPuan < 2000)
+            {
+                arabalarinHareketHizi = 10;
+                yolHizi = 10;
+            }
+            else if (kazanilanPuan > 2000)
+            {
+                arabalarinHareketHizi = 13;
+                yolHizi = 13;
+            }
 
+            //Araba hýzlarý
+            pbAraba1.Top += arabalarinHareketHizi;
+            pbAraba2.Top += arabalarinHareketHizi;
+            pbAraba3.Top += arabalarinHareketHizi;
+            pbAraba4.Top += arabalarinHareketHizi;
+
+            //Yol hýzý
             pbYol.Top += yolHizi;
-            if (pbYol.Top > pnlYarisAlani.Height)
+            if (pbYol.Top > pnlYarisAlani.Height) //Yol yenilenmesi
             {
                 pbYol.Top = pbYol.Height * (-1);
             }
 
-            pbAraba1.Top += arabaHareketHizi;
-            pbAraba2.Top += arabaHareketHizi;
-            pbAraba3.Top += arabaHareketHizi;
-            pbAraba4.Top += arabaHareketHizi;
-
-
-            if (sagHareket && pbArabam.Left > 0)
+            //Araba hareketleri ve kýsýtlamalarý
+            if (solHareket && pbArabam.Left > 0)
             {
-                pbArabam.Left += arabaHareketHizi;
+                pbArabam.Left -= arabaminHareketHizi;
             }
-            if (solHareket && pbArabam.Right < pnlYarisAlani.Width)
+            if (sagHareket && pbArabam.Right < pnlYarisAlani.Width)
             {
-                pbArabam.Left -= arabaHareketHizi;
+                pbArabam.Left += arabaminHareketHizi;
             }
 
             if (pbAraba1.Top > pnlYarisAlani.Height)
