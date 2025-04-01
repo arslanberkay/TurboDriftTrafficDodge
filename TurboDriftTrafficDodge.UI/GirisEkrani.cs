@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace TurboDriftTrafficDodge.UI
 {
-    public partial class Form2 : Form
+    public partial class GirisEkrani : Form
     {
-        public Form2()
+        public GirisEkrani()
         {
             InitializeComponent();
         }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            ArabaYarisAlani form1 = new ArabaYarisAlani(this); //Form1 e FOrm2 yi gönderiyoruz
             form1.ShowDialog();
             this.Hide();
         }
@@ -30,18 +30,23 @@ namespace TurboDriftTrafficDodge.UI
             {
                 case int zorlukSeviyesi when (zorlukSeviyesi <= 20):
                     lblZorlukSeviyesi.Text = "Çok kolay";
+                    lblZorlukSeviyesi.Tag = "Çok kolay";
                     break;
                 case int zorlukSeviyesi when (zorlukSeviyesi > 20 && zorlukSeviyesi <= 40):
                     lblZorlukSeviyesi.Text = "Kolay";
+                    lblZorlukSeviyesi.Tag = "Kolay";
                     break;
                 case int zorlukSeviyesi when (zorlukSeviyesi > 40 && zorlukSeviyesi <= 60):
                     lblZorlukSeviyesi.Text = "Orta";
+                    lblZorlukSeviyesi.Tag = "Orta";
                     break;
                 case int zorlukSeviyesi when (zorlukSeviyesi > 60 && zorlukSeviyesi <= 80):
                     lblZorlukSeviyesi.Text = "Zor";
+                    lblZorlukSeviyesi.Tag = "Zor";
                     break;
                 case int zorlukSeviyesi when (zorlukSeviyesi > 80 && zorlukSeviyesi <= 100):
                     lblZorlukSeviyesi.Text = "Çok Zor";
+                    lblZorlukSeviyesi.Tag = "Çok Zor";
                     break;
             }
         }
@@ -52,7 +57,7 @@ namespace TurboDriftTrafficDodge.UI
         /// <param name="zorlukSeviyesi"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        private ZorlukSeviyesi ZorlukSeviyesiBelirle(string zorlukSeviyesi)
+        public ZorlukSeviyesi ZorlukSeviyesiBelirle(string zorlukSeviyesi)
         {
             return zorlukSeviyesi switch
             {

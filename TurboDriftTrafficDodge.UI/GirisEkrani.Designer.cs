@@ -1,6 +1,6 @@
 ﻿namespace TurboDriftTrafficDodge.UI
 {
-    partial class Form2
+    partial class GirisEkrani
     {
         /// <summary>
         /// Required designer variable.

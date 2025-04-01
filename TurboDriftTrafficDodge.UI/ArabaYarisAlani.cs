@@ -3,11 +3,14 @@ using System.Media;
 
 namespace TurboDriftTrafficDodge.UI
 {
-    public partial class Form1 : Form
+    public partial class ArabaYarisAlani : Form
     {
-        public Form1()
+        private GirisEkrani form2;
+
+        public ArabaYarisAlani(GirisEkrani gelenform2)
         {
             InitializeComponent();
+            form2 = gelenform2;
         }
 
         Random rnd = new Random();
@@ -19,7 +22,31 @@ namespace TurboDriftTrafficDodge.UI
         bool sagHareket = false;
         bool solHareket = false;
 
-      
+        List<Oyuncu> oyuncular = new List<Oyuncu>();
+
+        public void OyuncuOlustur(GirisEkrani form2)
+        {
+            Oyuncu oyuncu = new Oyuncu();
+            oyuncu.KullaniciAdi = form2.txtKullaniciAdi.Text; //Giriþ Ekranýndaki kullanýcý adýný al
+            oyuncu.Zorluk = form2.ZorlukSeviyesiBelirle(form2.lblZorlukSeviyesi.Text); //Giriþ ekranýnda belirlenen zorluk seviyesini ata
+            oyuncu.Skor = kazanilanPuan;
+            oyuncular.Add(oyuncu);
+
+            lstvOyuncular.Items.Clear();
+            OyunculariTabloyaEkle();
+        }
+
+        public void OyunculariTabloyaEkle()
+        {
+            foreach (var oyuncu in oyuncular)
+            {
+                ListViewItem listViewItem = new ListViewItem();
+                listViewItem.Text = oyuncu.KullaniciAdi;
+                listViewItem.SubItems.Add(oyuncu.Zorluk.ToString());
+                listViewItem.SubItems.Add(oyuncu.Skor.ToString());
+                lstvOyuncular.Items.Add(listViewItem);
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -27,6 +54,7 @@ namespace TurboDriftTrafficDodge.UI
             this.KeyPreview = true;
             KupaGoster(false);
             TabloOlustur();
+            OyunculariTabloyaEkle();
         }
 
         private void btnOyunuBaslat_Click(object sender, EventArgs e)
@@ -159,6 +187,8 @@ namespace TurboDriftTrafficDodge.UI
             //Eðer benim arabam baþka bir araba yada engel ile ayný konuma girerse(çarparsa) oyun sonlanýr.
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
+                OyuncuOlustur(form2);
+
                 SesCal("kazasesi.wav");
                 btnOyunuBaslat.Visible = true;
 
@@ -261,7 +291,7 @@ namespace TurboDriftTrafficDodge.UI
             lstvOyuncular.Columns.Add("Skor", 100);
         }
 
-     
+
 
 
 

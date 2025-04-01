@@ -1,6 +1,6 @@
 ﻿namespace TurboDriftTrafficDodge.UI
 {
-    partial class Form1
+    partial class ArabaYarisAlani
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,6 +47,7 @@
             label2 = new Label();
             lblEnYuksekSkor = new Label();
             lstvOyuncular = new ListView();
+            btnAnaSayfa = new Button();
             pnlYarisAlani.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbKupa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
@@ -60,10 +61,10 @@
             // 
             // btnOyunuBaslat
             // 
-            btnOyunuBaslat.Location = new Point(771, 906);
+            btnOyunuBaslat.Location = new Point(731, 906);
             btnOyunuBaslat.Margin = new Padding(4);
             btnOyunuBaslat.Name = "btnOyunuBaslat";
-            btnOyunuBaslat.Size = new Size(300, 81);
+            btnOyunuBaslat.Size = new Size(340, 81);
             btnOyunuBaslat.TabIndex = 1;
             btnOyunuBaslat.Text = "Oyunu Başlat";
             btnOyunuBaslat.UseVisualStyleBackColor = true;
@@ -242,7 +243,18 @@
             lstvOyuncular.TabIndex = 4;
             lstvOyuncular.UseCompatibleStateImageBehavior = false;
             // 
-            // Form1
+            // btnAnaSayfa
+            // 
+            btnAnaSayfa.Location = new Point(1111, 906);
+            btnAnaSayfa.Margin = new Padding(4);
+            btnAnaSayfa.Name = "btnAnaSayfa";
+            btnAnaSayfa.Size = new Size(331, 81);
+            btnAnaSayfa.TabIndex = 1;
+            btnAnaSayfa.Text = "Ana Sayfa";
+            btnAnaSayfa.UseVisualStyleBackColor = true;
+            btnAnaSayfa.Click += btnOyunuBaslat_Click;
+            // 
+            // ArabaYarisAlani
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -254,12 +266,13 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pnlYarisAlani);
+            Controls.Add(btnAnaSayfa);
             Controls.Add(btnOyunuBaslat);
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
-            Name = "Form1";
+            Name = "ArabaYarisAlani";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Araba Yarış";
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
             KeyUp += Form1_KeyUp;
@@ -296,5 +309,6 @@
         private Label lblEnYuksekSkorKupa;
         private Label lblEnYuksekSkorKupaYazisi;
         private ListView lstvOyuncular;
+        private Button btnAnaSayfa;
     }
 }
