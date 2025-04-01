@@ -24,6 +24,7 @@ namespace TurboDriftTrafficDodge.UI
             pbPatlama.Visible = false;
             this.KeyPreview = true;
             KupaGoster(false);
+            TabloOlustur();
         }
 
         private void btnOyunuBaslat_Click(object sender, EventArgs e)
@@ -247,6 +248,15 @@ namespace TurboDriftTrafficDodge.UI
             pbKupa.Visible = gorunurluk;
             lblEnYuksekSkorKupaYazisi.Visible = gorunurluk;
             lblEnYuksekSkorKupa.Visible = gorunurluk;
+        }
+
+        private void TabloOlustur()
+        {
+            lstvOyuncular.View = View.Details;
+            lstvOyuncular.GridLines = true;
+            lstvOyuncular.Columns.Add("Oyuncu", 125);
+            lstvOyuncular.Columns.Add("Zorluk", 100);
+            lstvOyuncular.Columns.Add("Skor", 100);
         }
 
 

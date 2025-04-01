@@ -46,6 +46,7 @@
             lblKazanilanPuan = new Label();
             label2 = new Label();
             lblEnYuksekSkor = new Label();
+            lstvOyuncular = new ListView();
             pnlYarisAlani.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbKupa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
@@ -232,12 +233,22 @@
             lblEnYuksekSkor.TabIndex = 3;
             lblEnYuksekSkor.Text = "0";
             // 
+            // lstvOyuncular
+            // 
+            lstvOyuncular.BackColor = Color.DimGray;
+            lstvOyuncular.Location = new Point(1111, 12);
+            lstvOyuncular.Name = "lstvOyuncular";
+            lstvOyuncular.Size = new Size(331, 884);
+            lstvOyuncular.TabIndex = 4;
+            lstvOyuncular.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1134, 1013);
+            ClientSize = new Size(1467, 1013);
+            Controls.Add(lstvOyuncular);
             Controls.Add(lblEnYuksekSkor);
             Controls.Add(lblKazanilanPuan);
             Controls.Add(label2);
@@ -284,5 +295,6 @@
         private PictureBox pbKupa;
         private Label lblEnYuksekSkorKupa;
         private Label lblEnYuksekSkorKupaYazisi;
+        private ListView lstvOyuncular;
     }
 }
