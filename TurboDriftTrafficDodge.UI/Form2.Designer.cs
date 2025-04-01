@@ -124,7 +124,7 @@
         private Button btnGirisYap;
         private Label label2;
         private TrackBar tbZorluk;
-        private Label lblZorlukSeviyesi;
         public TextBox txtKullaniciAdi;
+        public Label lblZorlukSeviyesi;
     }
 }

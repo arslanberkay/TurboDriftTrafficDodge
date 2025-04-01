@@ -19,6 +19,8 @@ namespace TurboDriftTrafficDodge.UI
         bool sagHareket = false;
         bool solHareket = false;
 
+      
+
         private void Form1_Load(object sender, EventArgs e)
         {
             pbPatlama.Visible = false;
@@ -258,6 +260,8 @@ namespace TurboDriftTrafficDodge.UI
             lstvOyuncular.Columns.Add("Zorluk", 100);
             lstvOyuncular.Columns.Add("Skor", 100);
         }
+
+     
 
 
 

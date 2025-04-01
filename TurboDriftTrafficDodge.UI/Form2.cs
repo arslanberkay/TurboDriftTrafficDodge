@@ -45,5 +45,28 @@ namespace TurboDriftTrafficDodge.UI
                     break;
             }
         }
+
+        /// <summary>
+        /// İçine gönderilen zorluk seviyesini enum tipinde geriye döndüren metod
+        /// </summary>
+        /// <param name="zorlukSeviyesi"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private ZorlukSeviyesi ZorlukSeviyesiBelirle(string zorlukSeviyesi)
+        {
+            return zorlukSeviyesi switch
+            {
+                "Çok kolay" => ZorlukSeviyesi.CokKolay,
+                "Kolay" => ZorlukSeviyesi.Kolay,
+                "Orta" => ZorlukSeviyesi.Orta,
+                "Zor" => ZorlukSeviyesi.Zor,
+                "Çok Zor" => ZorlukSeviyesi.CokZor,
+                _ => throw new Exception("Geçersiz zorluk seviyesi")
+            };
+        }
+
+
+
+
     }
 }
