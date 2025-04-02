@@ -96,7 +96,7 @@
             // pbKupa
             // 
             pbKupa.Image = Properties.Resources.kupa;
-            pbKupa.Location = new Point(389, 38);
+            pbKupa.Location = new Point(385, 38);
             pbKupa.Name = "pbKupa";
             pbKupa.Size = new Size(282, 311);
             pbKupa.SizeMode = PictureBoxSizeMode.Zoom;
@@ -136,7 +136,7 @@
             // pbAraba2
             // 
             pbAraba2.Image = Properties.Resources.araba6;
-            pbAraba2.Location = new Point(259, 373);
+            pbAraba2.Location = new Point(251, 452);
             pbAraba2.Name = "pbAraba2";
             pbAraba2.Size = new Size(84, 186);
             pbAraba2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -146,7 +146,7 @@
             // pbAraba4
             // 
             pbAraba4.Image = Properties.Resources.araba3;
-            pbAraba4.Location = new Point(905, 198);
+            pbAraba4.Location = new Point(909, 198);
             pbAraba4.Name = "pbAraba4";
             pbAraba4.Size = new Size(81, 151);
             pbAraba4.SizeMode = PictureBoxSizeMode.Zoom;
