@@ -34,10 +34,22 @@ namespace TurboDriftTrafficDodge.UI
 
             Oyuncu yeniOyuncu = new Oyuncu();
             yeniOyuncu.KullaniciAdi = txtKullaniciAdi.Text;
-            yeniOyuncu.Zorluk = ZorlukSeviyesiBelirle(lblZorlukSeviyesi.Text);
+            yeniOyuncu.Zorluk = lblZorlukSeviyesi.Text;
 
-            //Jsonda kayıtlı olan oyuncuları getir ve kontrol et içinde aynı kullanıcı adında olamaz!
+            //Kayıtlı oyuncuları getir
+            var kayitliOyuncular = JSONDosya.Oku();
+
+            foreach (var kayitliOyuncu in kayitliOyuncular)
+            {
+                if (kayitliOyuncu.KullaniciAdi == yeniOyuncu.KullaniciAdi)
+                {
+                    MessageBox.Show("Bu kullanıcı adı daha önce alındı!");
+                    return;
+                }
+            }
+
             oyuncular.Add(yeniOyuncu);
+            JSONDosya.Kaydet(oyuncular);
 
             ArabaYarisAlani form1 = new ArabaYarisAlani(this); //Form1 e FOrm2 yi gönderiyoruz
             form1.ShowDialog();
@@ -66,26 +78,7 @@ namespace TurboDriftTrafficDodge.UI
             }
         }
 
-        /// <summary>
-        /// İçine gönderilen zorluk seviyesini enum tipinde geriye döndüren metod
-        /// </summary>
-        /// <param name="zorlukSeviyesi"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
-        public ZorlukSeviyesi ZorlukSeviyesiBelirle(string zorlukSeviyesi)
-        {
-
-            return zorlukSeviyesi switch
-            {
-                "Çok kolay" => ZorlukSeviyesi.CokKolay,
-                "Kolay" => ZorlukSeviyesi.Kolay,
-                "Orta" => ZorlukSeviyesi.Orta,
-                "Zor" => ZorlukSeviyesi.Zor,
-                "Çok Zor" => ZorlukSeviyesi.CokZor,
-                _ => throw new Exception("Geçersiz zorluk seviyesi")
-            };
-
-        }
+      
 
 
 

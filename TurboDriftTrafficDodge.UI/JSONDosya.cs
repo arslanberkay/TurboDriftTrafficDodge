@@ -51,10 +51,34 @@ namespace TurboDriftTrafficDodge.UI
             //Listeyi json olarak kaydetme
             var jsonAyarlar = new JsonSerializerOptions { WriteIndented = true }; //Json'un güzel okunabilir olmasını sağlar.
             string jsonVeri = JsonSerializer.Serialize(oyuncular, jsonAyarlar);
-            File.WriteAllText(jsonVeri, jsonDosyaYolu);
+            File.WriteAllText(jsonDosyaYolu, jsonVeri);
         }
 
-        
+        public static List<Oyuncu> Oku()
+        {
+            //Dosya yolu oluşturma
+            string projeDizini = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string hedefDizin = Path.Combine(projeDizini, @"..\..\..\", "OyuncuData");
+            string jsonDosyaYolu = Path.Combine(hedefDizin, "oyuncu.json");
+
+            //Klasör Kontrolü
+            if (!Directory.Exists(hedefDizin))
+            {
+                Directory.CreateDirectory(hedefDizin);
+            }
+
+            if (!File.Exists(jsonDosyaYolu))
+            {
+                File.WriteAllText(jsonDosyaYolu, "{}");
+            }
+
+            //Json Verisini Okuma
+            string jsonVeri = File.ReadAllText(jsonDosyaYolu); //Json dosyasının tamamını okur.
+            var jsonAyarlar = new JsonSerializerOptions { WriteIndented = true };
+            var oyuncular = JsonSerializer.Deserialize<List<Oyuncu>>(jsonVeri,jsonAyarlar);
+
+            return oyuncular;
+        }
 
 
 

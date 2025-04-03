@@ -22,22 +22,12 @@ namespace TurboDriftTrafficDodge.UI
         bool sagHareket = false;
         bool solHareket = false;
 
-        List<Oyuncu> oyuncular = new List<Oyuncu>();
 
-        public void OyuncuOlustur(GirisEkrani form2)
-        {
-            Oyuncu oyuncu = new Oyuncu();
-            oyuncu.KullaniciAdi = form2.txtKullaniciAdi.Text; //Giriþ Ekranýndaki kullanýcý adýný al
-            oyuncu.Zorluk = form2.ZorlukSeviyesiBelirle(form2.lblZorlukSeviyesi.Text); //Giriþ ekranýnda belirlenen zorluk seviyesini ata
-            oyuncu.Skor = kazanilanPuan;
-            oyuncular.Add(oyuncu);
-
-            lstvOyuncular.Items.Clear();
-            OyunculariTabloyaEkle();
-        }
 
         public void OyunculariTabloyaEkle()
         {
+            var oyuncular = JSONDosya.Oku();
+
             foreach (var oyuncu in oyuncular)
             {
                 ListViewItem listViewItem = new ListViewItem();
@@ -187,7 +177,7 @@ namespace TurboDriftTrafficDodge.UI
             //Eðer benim arabam baþka bir araba yada engel ile ayný konuma girerse(çarparsa) oyun sonlanýr.
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
-                OyuncuOlustur(form2);
+
 
                 SesCal("kazasesi.wav");
                 btnOyunuBaslat.Visible = true;

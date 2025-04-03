@@ -10,6 +10,6 @@ namespace TurboDriftTrafficDodge.UI
     {
         public string KullaniciAdi { get; set; }
         public int Skor { get; set; }
-        public ZorlukSeviyesi Zorluk { get; set; }
+        public string Zorluk { get; set; }
     }
 }
