@@ -17,6 +17,8 @@ namespace TurboDriftTrafficDodge.UI
             InitializeComponent();
         }
 
+        List<Oyuncu> oyuncular = new List<Oyuncu>();
+
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text))
@@ -29,6 +31,13 @@ namespace TurboDriftTrafficDodge.UI
                 MessageBox.Show("Geçersiz zorluk seviyesi");
                 return;
             }
+
+            Oyuncu yeniOyuncu = new Oyuncu();
+            yeniOyuncu.KullaniciAdi = txtKullaniciAdi.Text;
+            yeniOyuncu.Zorluk = ZorlukSeviyesiBelirle(lblZorlukSeviyesi.Text);
+
+            //Jsonda kayıtlı olan oyuncuları getir ve kontrol et içinde aynı kullanıcı adında olamaz!
+            oyuncular.Add(yeniOyuncu);
 
             ArabaYarisAlani form1 = new ArabaYarisAlani(this); //Form1 e FOrm2 yi gönderiyoruz
             form1.ShowDialog();
