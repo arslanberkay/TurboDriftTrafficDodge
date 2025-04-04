@@ -51,7 +51,7 @@ namespace TurboDriftTrafficDodge.UI
             oyuncular.Add(yeniOyuncu);
             JSONDosya.Kaydet(oyuncular);
 
-            ArabaYarisAlani form1 = new ArabaYarisAlani(this); //Form1 e FOrm2 yi gönderiyoruz
+            ArabaYarisAlani form1 = new ArabaYarisAlani(); //Form1 e FOrm2 yi gönderiyoruz
             form1.ShowDialog();
             this.Hide();
         }

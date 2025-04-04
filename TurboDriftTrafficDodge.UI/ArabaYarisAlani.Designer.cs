@@ -167,9 +167,9 @@
             // 
             pbPatlama.BackColor = Color.Transparent;
             pbPatlama.Image = Properties.Resources.explosion;
-            pbPatlama.Location = new Point(467, 649);
+            pbPatlama.Location = new Point(720, 452);
             pbPatlama.Name = "pbPatlama";
-            pbPatlama.Size = new Size(109, 90);
+            pbPatlama.Size = new Size(95, 89);
             pbPatlama.SizeMode = PictureBoxSizeMode.Zoom;
             pbPatlama.TabIndex = 3;
             pbPatlama.TabStop = false;
@@ -187,7 +187,7 @@
             // pbYol
             // 
             pbYol.Image = Properties.Resources.yol;
-            pbYol.Location = new Point(5, -791);
+            pbYol.Location = new Point(3, -800);
             pbYol.Name = "pbYol";
             pbYol.Size = new Size(1029, 1672);
             pbYol.SizeMode = PictureBoxSizeMode.StretchImage;

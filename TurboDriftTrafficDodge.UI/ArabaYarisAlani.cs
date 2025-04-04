@@ -5,12 +5,11 @@ namespace TurboDriftTrafficDodge.UI
 {
     public partial class ArabaYarisAlani : Form
     {
-        private GirisEkrani form2;
 
-        public ArabaYarisAlani(GirisEkrani gelenform2)
+
+        public ArabaYarisAlani()
         {
             InitializeComponent();
-            form2 = gelenform2;
         }
 
         Random rnd = new Random();
@@ -140,10 +139,10 @@ namespace TurboDriftTrafficDodge.UI
         /// <param name="pbAraba"></param>
         private void ArabaYenile(PictureBox pbAraba)
         {
-            int rasgeleAraba = rnd.Next(1, 10);
+            int rastgeleAraba = rnd.Next(1, 10);
             pbAraba.Top = rnd.Next(0, 150) * (-1);
 
-            switch (rasgeleAraba)
+            switch (rastgeleAraba)
             {
                 case 1:
                     pbAraba.Image = TurboDriftTrafficDodge.UI.Properties.Resources.araba2;
