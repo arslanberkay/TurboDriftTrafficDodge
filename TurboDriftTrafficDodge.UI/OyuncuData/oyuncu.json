@@ -1,47 +1,7 @@
 [
   {
     "KullaniciAdi": "Berkay",
-    "Skor": 1400,
+    "Skor": 1283,
     "Zorluk": "Orta"
-  },
-  {
-    "KullaniciAdi": "doga",
-    "Skor": 612,
-    "Zorluk": "Orta"
-  },
-  {
-    "KullaniciAdi": "vaf",
-    "Skor": 0,
-    "Zorluk": "Zor"
-  },
-  {
-    "KullaniciAdi": "n",
-    "Skor": 38,
-    "Zorluk": "Orta"
-  },
-  {
-    "KullaniciAdi": "vxc",
-    "Skor": 78,
-    "Zorluk": "Orta"
-  },
-  {
-    "KullaniciAdi": "vv",
-    "Skor": 89,
-    "Zorluk": "Orta"
-  },
-  {
-    "KullaniciAdi": "z",
-    "Skor": 94,
-    "Zorluk": "Zor"
-  },
-  {
-    "KullaniciAdi": "d",
-    "Skor": 82,
-    "Zorluk": "Orta"
-  },
-  {
-    "KullaniciAdi": "zzzzzzzzzzzzzzzzz",
-    "Skor": 90,
-    "Zorluk": "Zor"
   }
 ]

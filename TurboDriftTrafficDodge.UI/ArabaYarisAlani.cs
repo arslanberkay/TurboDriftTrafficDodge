@@ -22,12 +22,10 @@ namespace TurboDriftTrafficDodge.UI
         bool sagHareket = false;
         bool solHareket = false;
 
-
+        List<Oyuncu> oyuncular = JSONDosya.Oku();
 
         public void OyunculariTabloyaEkle()
         {
-            var oyuncular = JSONDosya.Oku();
-
             foreach (var oyuncu in oyuncular)
             {
                 ListViewItem listViewItem = new ListViewItem();
@@ -66,8 +64,8 @@ namespace TurboDriftTrafficDodge.UI
             kazanilanPuan++;
             lblKazanilanPuan.Text = kazanilanPuan.ToString();
 
-            //Level sistemi
-            if (kazanilanPuan < 500)
+            //Level sistemi (Kolaydan-Zora)
+            if (kazanilanPuan < 500 )
             {
                 arabalarinHareketHizi = 5;
                 yolHizi = 5;
@@ -184,7 +182,6 @@ namespace TurboDriftTrafficDodge.UI
             //Eðer benim arabam baþka bir araba yada engel ile ayný konuma girerse(çarparsa) oyun sonlanýr.
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
-                var oyuncular = JSONDosya.Oku();
                 Oyuncu oynayanOyuncu = oyuncular.Last(); //Son oyuncumu alýr.
                 oynayanOyuncu.Skor = kazanilanPuan;
                 JSONDosya.OyuncuGuncelle(oyuncular);

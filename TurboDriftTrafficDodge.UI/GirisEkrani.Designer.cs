@@ -34,6 +34,7 @@
             txtKullaniciAdi = new TextBox();
             tbZorluk = new TrackBar();
             lblZorlukSeviyesi = new Label();
+            chkKolaydanZora = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)tbZorluk).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // btnGirisYap
             // 
             btnGirisYap.ForeColor = SystemColors.ActiveCaptionText;
-            btnGirisYap.Location = new Point(63, 237);
+            btnGirisYap.Location = new Point(63, 254);
             btnGirisYap.Name = "btnGirisYap";
             btnGirisYap.Size = new Size(347, 60);
             btnGirisYap.TabIndex = 1;
@@ -90,18 +91,31 @@
             // 
             lblZorlukSeviyesi.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblZorlukSeviyesi.ForeColor = SystemColors.Control;
-            lblZorlukSeviyesi.Location = new Point(190, 184);
+            lblZorlukSeviyesi.Location = new Point(185, 199);
             lblZorlukSeviyesi.Margin = new Padding(4, 0, 4, 0);
             lblZorlukSeviyesi.Name = "lblZorlukSeviyesi";
             lblZorlukSeviyesi.Size = new Size(220, 41);
             lblZorlukSeviyesi.TabIndex = 0;
+            // 
+            // chkKolaydanZora
+            // 
+            chkKolaydanZora.AutoSize = true;
+            chkKolaydanZora.ForeColor = SystemColors.ButtonHighlight;
+            chkKolaydanZora.Location = new Point(190, 164);
+            chkKolaydanZora.Name = "chkKolaydanZora";
+            chkKolaydanZora.Size = new Size(161, 32);
+            chkKolaydanZora.TabIndex = 4;
+            chkKolaydanZora.Text = "Kolaydan Zora";
+            chkKolaydanZora.UseVisualStyleBackColor = true;
+            chkKolaydanZora.CheckedChanged += chkKolaydanZora_CheckedChanged;
             // 
             // GirisEkrani
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(475, 350);
+            ClientSize = new Size(475, 385);
+            Controls.Add(chkKolaydanZora);
             Controls.Add(tbZorluk);
             Controls.Add(txtKullaniciAdi);
             Controls.Add(btnGirisYap);
@@ -126,5 +140,6 @@
         private TrackBar tbZorluk;
         public TextBox txtKullaniciAdi;
         public Label lblZorlukSeviyesi;
+        private CheckBox chkKolaydanZora;
     }
 }

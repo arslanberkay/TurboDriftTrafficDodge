@@ -59,10 +59,20 @@ namespace TurboDriftTrafficDodge.UI
 
         private void tbZorluk_Scroll(object sender, EventArgs e)
         {
+            if (chkKolaydanZora.Checked)
+            {
+                lblZorlukSeviyesi.Visible = false;
+               
+            }
+            else
+            {
+                lblZorlukSeviyesi.Visible = true;
+            }
+
             switch (tbZorluk.Value)
             {
                 case int zorlukSeviyesi when (zorlukSeviyesi > 0 && zorlukSeviyesi <= 20):
-                    lblZorlukSeviyesi.Text = "Çok kolay";
+                    lblZorlukSeviyesi.Text = "Çok Kolay";
                     break;
                 case int zorlukSeviyesi when (zorlukSeviyesi > 20 && zorlukSeviyesi <= 40):
                     lblZorlukSeviyesi.Text = "Kolay";
@@ -79,10 +89,21 @@ namespace TurboDriftTrafficDodge.UI
             }
         }
 
-      
+        private void chkKolaydanZora_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkKolaydanZora.Checked)
+            {
+                lblZorlukSeviyesi.Text = chkKolaydanZora.Text;
+                lblZorlukSeviyesi.Visible = false;
+                tbZorluk.Value = 0;
+                tbZorluk.Enabled = false;
+            }
+            else
+            {
+                lblZorlukSeviyesi.Text = string.Empty;
+                tbZorluk.Enabled = true;
+            }
 
-
-
-
+        }
     }
 }
