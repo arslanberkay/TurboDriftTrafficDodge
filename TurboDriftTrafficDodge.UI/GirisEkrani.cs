@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurboDriftTrafficDodge.UI.Models;
 
 namespace TurboDriftTrafficDodge.UI
 {
@@ -49,7 +50,7 @@ namespace TurboDriftTrafficDodge.UI
             }
 
             oyuncular.Add(yeniOyuncu);
-            JSONDosya.Kaydet(oyuncular);
+            JSONDosya.YeniOyuncuKaydet(oyuncular);
 
             ArabaYarisAlani form1 = new ArabaYarisAlani(); //Form1 e FOrm2 yi gönderiyoruz
             form1.ShowDialog();

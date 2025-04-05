@@ -1,5 +1,6 @@
 using System.Configuration;
 using System.Media;
+using TurboDriftTrafficDodge.UI.Models;
 
 namespace TurboDriftTrafficDodge.UI
 {
@@ -171,12 +172,24 @@ namespace TurboDriftTrafficDodge.UI
             }
         }
 
+        private void ListViewGuncelle()
+        {
+            lstvOyuncular.Clear();
+            TabloOlustur();
+            OyunculariTabloyaEkle();
+        }
+
         private void OyunuBitir()
         {
             //Eðer benim arabam baþka bir araba yada engel ile ayný konuma girerse(çarparsa) oyun sonlanýr.
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
-
+                var oyuncular = JSONDosya.Oku();
+                Oyuncu oynayanOyuncu = oyuncular.Last(); //Son oyuncumu alýr.
+                oynayanOyuncu.Skor = kazanilanPuan;
+                JSONDosya.OyuncuGuncelle(oyuncular);
+                ListViewGuncelle();
+                
 
                 SesCal("kazasesi.wav");
                 btnOyunuBaslat.Visible = true;

@@ -8,11 +8,11 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace TurboDriftTrafficDodge.UI
+namespace TurboDriftTrafficDodge.UI.Models
 {
     public class JSONDosya
     {
-        public static void Kaydet(List<Oyuncu> yeniOyuncular)
+        public static void YeniOyuncuKaydet(List<Oyuncu> yeniOyuncular)
         {
             //Dosya yolu oluşturma
             string projeDizini = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -54,6 +54,26 @@ namespace TurboDriftTrafficDodge.UI
             File.WriteAllText(jsonDosyaYolu, jsonVeri);
         }
 
+        public static void OyuncuGuncelle(List<Oyuncu> guncelOyuncular)
+        { 
+            //Dosya yolu oluşturma
+            string projeDizini = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string hedefDizin = Path.Combine(projeDizini, @"..\..\..\", "OyuncuData");
+            string jsonDosyaYolu = Path.Combine(hedefDizin, "oyuncu.json");
+
+            //Klasör Kontrolü
+            if (!Directory.Exists(hedefDizin))
+            {
+                Directory.CreateDirectory(hedefDizin);
+            }
+
+            //Listeyi json olarak kaydetme
+            var jsonAyarlar = new JsonSerializerOptions { WriteIndented = true }; //Json'un güzel okunabilir olmasını sağlar.
+            string jsonVeri = JsonSerializer.Serialize(guncelOyuncular, jsonAyarlar);
+            File.WriteAllText(jsonDosyaYolu, jsonVeri);
+
+        }
+
         public static List<Oyuncu> Oku()
         {
             //Dosya yolu oluşturma
@@ -75,7 +95,7 @@ namespace TurboDriftTrafficDodge.UI
             //Json Verisini Okuma
             string jsonVeri = File.ReadAllText(jsonDosyaYolu); //Json dosyasının tamamını okur.
             var jsonAyarlar = new JsonSerializerOptions { WriteIndented = true };
-            var oyuncular = JsonSerializer.Deserialize<List<Oyuncu>>(jsonVeri,jsonAyarlar);
+            var oyuncular = JsonSerializer.Deserialize<List<Oyuncu>>(jsonVeri, jsonAyarlar);
 
             return oyuncular;
         }

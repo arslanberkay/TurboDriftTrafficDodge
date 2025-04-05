@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TurboDriftTrafficDodge.UI
+namespace TurboDriftTrafficDodge.UI.Models
 {
     public class Oyuncu
     {
