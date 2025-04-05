@@ -16,6 +16,7 @@ namespace TurboDriftTrafficDodge.UI
         public GirisEkrani()
         {
             InitializeComponent();
+            MuzikleriGoster();
         }
 
         List<Oyuncu> oyuncular = new List<Oyuncu>();
@@ -52,7 +53,7 @@ namespace TurboDriftTrafficDodge.UI
             oyuncular.Add(yeniOyuncu);
             JSONDosya.YeniOyuncuKaydet(oyuncular);
 
-            ArabaYarisAlani form1 = new ArabaYarisAlani(); //Form1 e FOrm2 yi gönderiyoruz
+            ArabaYarisAlani form1 = new ArabaYarisAlani(this); //Form1 e FOrm2 yi gönderiyoruz
             form1.ShowDialog();
             this.Hide();
         }
@@ -62,7 +63,7 @@ namespace TurboDriftTrafficDodge.UI
             if (chkKolaydanZora.Checked)
             {
                 lblZorlukSeviyesi.Visible = false;
-               
+
             }
             else
             {
@@ -104,6 +105,24 @@ namespace TurboDriftTrafficDodge.UI
                 tbZorluk.Enabled = true;
             }
 
+        }
+
+        private void MuzikleriGoster()
+        {
+            List<string> muzikYollari = new List<string>
+            {
+                "Hot-Action-Cop-Fever-For-The-Flava-_Need-For-Speed_-Hot-Pursuit-2_",
+                "Lil-Jon-_-The-East-Side-Boyz-Get-Low",
+                "Need-for-Speed-III-Soundtrack-Aquila-303",
+                "Need-for-Speed-II-Soundtrack-Romulus-3",
+                "Tuğçe-Kandemir-El-Alem-_Enes-Çanta-Remix_",
+                "Tuğçe Kandemir - Yanlış ( Uğur Yılmaz Remix )"
+            };
+
+            foreach (var muzik in muzikYollari)
+            {
+                cbMuzik.Items.Add(muzik);
+            }
         }
     }
 }

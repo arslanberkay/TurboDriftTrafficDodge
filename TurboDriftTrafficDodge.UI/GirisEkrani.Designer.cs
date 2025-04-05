@@ -35,13 +35,15 @@
             tbZorluk = new TrackBar();
             lblZorlukSeviyesi = new Label();
             chkKolaydanZora = new CheckBox();
+            label3 = new Label();
+            cbMuzik = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)tbZorluk).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.ForeColor = SystemColors.Control;
+            label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(63, 72);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
@@ -52,7 +54,7 @@
             // btnGirisYap
             // 
             btnGirisYap.ForeColor = SystemColors.ActiveCaptionText;
-            btnGirisYap.Location = new Point(63, 254);
+            btnGirisYap.Location = new Point(63, 302);
             btnGirisYap.Name = "btnGirisYap";
             btnGirisYap.Size = new Size(347, 60);
             btnGirisYap.TabIndex = 1;
@@ -63,8 +65,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(63, 125);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(63, 120);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(73, 28);
@@ -80,7 +82,7 @@
             // 
             // tbZorluk
             // 
-            tbZorluk.Location = new Point(185, 125);
+            tbZorluk.Location = new Point(185, 120);
             tbZorluk.Maximum = 100;
             tbZorluk.Name = "tbZorluk";
             tbZorluk.Size = new Size(225, 56);
@@ -90,8 +92,8 @@
             // lblZorlukSeviyesi
             // 
             lblZorlukSeviyesi.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            lblZorlukSeviyesi.ForeColor = SystemColors.Control;
-            lblZorlukSeviyesi.Location = new Point(185, 199);
+            lblZorlukSeviyesi.ForeColor = SystemColors.ControlLightLight;
+            lblZorlukSeviyesi.Location = new Point(185, 194);
             lblZorlukSeviyesi.Margin = new Padding(4, 0, 4, 0);
             lblZorlukSeviyesi.Name = "lblZorlukSeviyesi";
             lblZorlukSeviyesi.Size = new Size(220, 41);
@@ -100,8 +102,8 @@
             // chkKolaydanZora
             // 
             chkKolaydanZora.AutoSize = true;
-            chkKolaydanZora.ForeColor = SystemColors.ButtonHighlight;
-            chkKolaydanZora.Location = new Point(190, 164);
+            chkKolaydanZora.ForeColor = SystemColors.ControlLightLight;
+            chkKolaydanZora.Location = new Point(190, 159);
             chkKolaydanZora.Name = "chkKolaydanZora";
             chkKolaydanZora.Size = new Size(161, 32);
             chkKolaydanZora.TabIndex = 4;
@@ -109,12 +111,32 @@
             chkKolaydanZora.UseVisualStyleBackColor = true;
             chkKolaydanZora.CheckedChanged += chkKolaydanZora_CheckedChanged;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(63, 245);
+            label3.Name = "label3";
+            label3.Size = new Size(65, 28);
+            label3.TabIndex = 5;
+            label3.Text = "Müzik";
+            // 
+            // cbMuzik
+            // 
+            cbMuzik.FormattingEnabled = true;
+            cbMuzik.Location = new Point(190, 245);
+            cbMuzik.Name = "cbMuzik";
+            cbMuzik.Size = new Size(220, 36);
+            cbMuzik.TabIndex = 6;
+            // 
             // GirisEkrani
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(475, 385);
+            ClientSize = new Size(466, 450);
+            Controls.Add(cbMuzik);
+            Controls.Add(label3);
             Controls.Add(chkKolaydanZora);
             Controls.Add(tbZorluk);
             Controls.Add(txtKullaniciAdi);
@@ -141,5 +163,7 @@
         public TextBox txtKullaniciAdi;
         public Label lblZorlukSeviyesi;
         private CheckBox chkKolaydanZora;
+        private Label label3;
+        public ComboBox cbMuzik;
     }
 }

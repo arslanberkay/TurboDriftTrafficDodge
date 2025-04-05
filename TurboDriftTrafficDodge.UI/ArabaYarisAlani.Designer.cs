@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArabaYarisAlani));
             btnOyunuBaslat = new Button();
             tmrHareket = new System.Windows.Forms.Timer(components);
             pnlYarisAlani = new Panel();
@@ -47,7 +48,8 @@
             label2 = new Label();
             lblEnYuksekSkor = new Label();
             lstvOyuncular = new ListView();
-            btnAnaSayfa = new Button();
+            btnMenu = new Button();
+            imglMenu = new ImageList(components);
             pnlYarisAlani.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbKupa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAraba3).BeginInit();
@@ -236,38 +238,46 @@
             // 
             // lstvOyuncular
             // 
-            lstvOyuncular.BackColor = Color.DimGray;
+            lstvOyuncular.BackColor = Color.Gray;
             lstvOyuncular.Enabled = false;
-            lstvOyuncular.Location = new Point(1111, 12);
+            lstvOyuncular.Location = new Point(1107, 32);
             lstvOyuncular.Name = "lstvOyuncular";
-            lstvOyuncular.Size = new Size(331, 884);
+            lstvOyuncular.Size = new Size(385, 864);
             lstvOyuncular.TabIndex = 2;
             lstvOyuncular.UseCompatibleStateImageBehavior = false;
             // 
-            // btnAnaSayfa
+            // btnMenu
             // 
-            btnAnaSayfa.Location = new Point(1111, 906);
-            btnAnaSayfa.Margin = new Padding(4);
-            btnAnaSayfa.Name = "btnAnaSayfa";
-            btnAnaSayfa.Size = new Size(331, 81);
-            btnAnaSayfa.TabIndex = 4;
-            btnAnaSayfa.Text = "Ana Sayfa";
-            btnAnaSayfa.UseVisualStyleBackColor = true;
-            btnAnaSayfa.Click += btnAnaSayfa_Click;
+            btnMenu.BackColor = SystemColors.ControlDark;
+            btnMenu.ImageIndex = 0;
+            btnMenu.ImageList = imglMenu;
+            btnMenu.Location = new Point(1498, 12);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(55, 54);
+            btnMenu.TabIndex = 8;
+            btnMenu.UseVisualStyleBackColor = false;
+            btnMenu.Click += btnMenu_Click;
+            // 
+            // imglMenu
+            // 
+            imglMenu.ColorDepth = ColorDepth.Depth32Bit;
+            imglMenu.ImageStream = (ImageListStreamer)resources.GetObject("imglMenu.ImageStream");
+            imglMenu.TransparentColor = Color.Transparent;
+            imglMenu.Images.SetKeyName(0, "134216_menu_lines_hamburger_icon.png");
             // 
             // ArabaYarisAlani
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1467, 1013);
+            ClientSize = new Size(1564, 1013);
+            Controls.Add(btnMenu);
             Controls.Add(lstvOyuncular);
             Controls.Add(lblEnYuksekSkor);
             Controls.Add(lblKazanilanPuan);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pnlYarisAlani);
-            Controls.Add(btnAnaSayfa);
             Controls.Add(btnOyunuBaslat);
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
@@ -310,6 +320,7 @@
         private Label lblEnYuksekSkorKupa;
         private Label lblEnYuksekSkorKupaYazisi;
         private ListView lstvOyuncular;
-        private Button btnAnaSayfa;
+        private Button btnMenu;
+        private ImageList imglMenu;
     }
 }

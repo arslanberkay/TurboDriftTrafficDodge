@@ -7,10 +7,17 @@ namespace TurboDriftTrafficDodge.UI
     public partial class ArabaYarisAlani : Form
     {
 
-
+        private GirisEkrani GirisEkraniFormu;
+        public ArabaYarisAlani(GirisEkrani girisEkraniFormu)
+        {
+            InitializeComponent();
+            YeniOyun();
+            GirisEkraniFormu = girisEkraniFormu;
+        }
         public ArabaYarisAlani()
         {
             InitializeComponent();
+            YeniOyun();
         }
 
         Random rnd = new Random();
@@ -39,11 +46,10 @@ namespace TurboDriftTrafficDodge.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pbPatlama.Visible = false;
             this.KeyPreview = true;
-            KupaGoster(false);
             TabloOlustur();
             OyunculariTabloyaEkle();
+
         }
 
         private void btnOyunuBaslat_Click(object sender, EventArgs e)
@@ -53,10 +59,10 @@ namespace TurboDriftTrafficDodge.UI
 
         private void OyunuBaslat()
         {
-            SesCal("oyunsesi.wav");
+            SesCal();
             tmrHareket.Start();
             btnOyunuBaslat.Visible = false;
-            btnAnaSayfa.Visible = false;
+
         }
 
         private void tmrHareket_Tick(object sender, EventArgs e)
@@ -231,7 +237,7 @@ namespace TurboDriftTrafficDodge.UI
 
                 SesCal("kazasesi.wav");
                 btnOyunuBaslat.Visible = true;
-                btnAnaSayfa.Visible = true;
+
 
                 //Patlama efekti ayarlarý
                 pbPatlama.Visible = true;
@@ -285,8 +291,6 @@ namespace TurboDriftTrafficDodge.UI
                 sagHareket = false;
             }
         }
-
-
         private void YeniOyun()
         {
             pbArabam.Location = new Point(493, 642);
@@ -301,16 +305,24 @@ namespace TurboDriftTrafficDodge.UI
             KupaGoster(false);
             kazanilanPuan = 0;
         }
+        public SoundPlayer sp;
 
         /// <summary>
         /// Parametre olarak gönderilen ses adýný çalan metod (!Dosyanýn bulunduðu dizinde Sesler klasörünün içinde olmalý)
         /// </summary>
-        /// <param name="ses"></param>
+        private void SesCal()
+        {
+            string sesDosyaYolu = Path.Combine(Application.StartupPath, "Sesler", $"{GirisEkraniFormu.cbMuzik.SelectedItem}.wav");
+
+            sp = new SoundPlayer(sesDosyaYolu);
+            sp.Play();
+        }
+
         private void SesCal(string ses)
         {
             string sesDosyaYolu = Path.Combine(Application.StartupPath, "Sesler", ses);
 
-            SoundPlayer sp = new SoundPlayer(sesDosyaYolu);
+            sp = new SoundPlayer(sesDosyaYolu);
             sp.Play();
         }
 
@@ -334,11 +346,12 @@ namespace TurboDriftTrafficDodge.UI
             lstvOyuncular.Columns.Add("Skor", 100);
         }
 
-        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-            GirisEkrani girisEkrani = new GirisEkrani();
-            girisEkrani.Show();
-            this.Hide();
+            tmrHareket.Stop();
+
+            Menu menu = new Menu(this);
+            menu.ShowDialog();
         }
     }
 }
