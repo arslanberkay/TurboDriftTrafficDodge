@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -111,18 +112,32 @@ namespace TurboDriftTrafficDodge.UI
         {
             List<string> muzikYollari = new List<string>
             {
-                "Hot-Action-Cop-Fever-For-The-Flava-_Need-For-Speed_-Hot-Pursuit-2_",
-                "Lil-Jon-_-The-East-Side-Boyz-Get-Low",
-                "Need-for-Speed-III-Soundtrack-Aquila-303",
-                "Need-for-Speed-II-Soundtrack-Romulus-3",
-                "Tuğçe-Kandemir-El-Alem-_Enes-Çanta-Remix_",
-                "Tuğçe Kandemir - Yanlış ( Uğur Yılmaz Remix )"
+                "Hot Action Cop - Fever For The Flava _Need For Speed_ Hot Pursuit 2_",
+                "Lil Jon & The East Side Boyz - Get Low",
+                "Need for Speed II Soundtrack - Romulus 3",
+                "Need for Speed III Soundtrack - Aquila 303",
+                "Tuğçe Kandemir - El Alem",
+                "Tuğçe Kandemir - Yanlış"
             };
 
             foreach (var muzik in muzikYollari)
             {
                 cbMuzik.Items.Add(muzik);
             }
+        }
+       
+        private void SesCal(string ses)
+        {
+            SoundPlayer sp = new SoundPlayer();
+            string sesDosyaYolu = Path.Combine(Application.StartupPath, "Sesler", ses);
+
+            sp = new SoundPlayer(sesDosyaYolu);
+            sp.Play();
+        }
+
+        private void GirisEkrani_Load(object sender, EventArgs e)
+        {
+            SesCal("Need-for-Speed-II-Soundtrack-Main-Menu_1 (1).wav");
         }
     }
 }

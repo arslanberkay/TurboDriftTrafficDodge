@@ -314,8 +314,11 @@ namespace TurboDriftTrafficDodge.UI
         {
             string sesDosyaYolu = Path.Combine(Application.StartupPath, "Sesler", $"{GirisEkraniFormu.cbMuzik.SelectedItem}.wav");
 
-            sp = new SoundPlayer(sesDosyaYolu);
-            sp.Play();
+            if (sesDosyaYolu != null)
+            {
+                sp = new SoundPlayer(sesDosyaYolu);
+                sp.Play();
+            }
         }
 
         private void SesCal(string ses)

@@ -149,6 +149,7 @@
             Name = "GirisEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Araba Yarış Oyunu ";
+            Load += GirisEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)tbZorluk).EndInit();
             ResumeLayout(false);
             PerformLayout();
