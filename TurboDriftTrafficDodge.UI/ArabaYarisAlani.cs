@@ -15,7 +15,8 @@ namespace TurboDriftTrafficDodge.UI
 
         Random rnd = new Random();
 
-        int kazanilanPuan = 0;
+        double kazanilanPuan = 0;
+        double leveleGoreArtisMiktari = 0;
         int arabalarinHareketHizi;
         int arabaminHareketHizi = 10;
         int yolHizi;
@@ -60,62 +61,71 @@ namespace TurboDriftTrafficDodge.UI
 
         private void tmrHareket_Tick(object sender, EventArgs e)
         {
-            //Puaný anlýk olarak gösterir.
-            kazanilanPuan++;
-            lblKazanilanPuan.Text = kazanilanPuan.ToString();
-
+            lblKazanilanPuan.Text = ((int)kazanilanPuan).ToString();
+            kazanilanPuan += leveleGoreArtisMiktari;
 
             //Level sistemi 
             switch (oyuncular.Last().Zorluk)
             {
                 case "Kolaydan Zora":
-                    if (kazanilanPuan < 500)
+                    if (kazanilanPuan < 250)
                     {
                         arabalarinHareketHizi = 5;
                         yolHizi = 5;
+                        leveleGoreArtisMiktari = 0.2;
                     }
-                    else if (kazanilanPuan >= 500 && kazanilanPuan < 1250)
+                    else if (kazanilanPuan >= 250 && kazanilanPuan < 750)
                     {
                         arabalarinHareketHizi = 7;
                         yolHizi = 7;
+                        leveleGoreArtisMiktari = 0.4;
                     }
-                    else if (kazanilanPuan >= 1250 && kazanilanPuan < 2000)
+                    else if (kazanilanPuan >= 750 && kazanilanPuan < 1500)
                     {
                         arabalarinHareketHizi = 10;
                         yolHizi = 10;
+                        leveleGoreArtisMiktari = 0.6;
                     }
-                    else if (kazanilanPuan >= 2000 && kazanilanPuan < 2700)
+                    else if (kazanilanPuan >= 1500 && kazanilanPuan < 2250)
                     {
                         arabalarinHareketHizi = 13;
                         yolHizi = 13;
+                        leveleGoreArtisMiktari = 0.8;
                     }
-                    else if (kazanilanPuan >= 2700)
+                    else if (kazanilanPuan >= 2250)
                     {
                         arabalarinHareketHizi = 15;
                         yolHizi = 15;
+                        leveleGoreArtisMiktari = 1;
                     }
                     break;
                 case "Çok Kolay":
                     arabalarinHareketHizi = 5;
                     yolHizi = 5;
+                    leveleGoreArtisMiktari = 0.2;
                     break;
                 case "Kolay":
                     arabalarinHareketHizi = 7;
                     yolHizi = 7;
+                    leveleGoreArtisMiktari = 0.4;
                     break;
                 case "Orta":
                     arabalarinHareketHizi = 10;
                     yolHizi = 10;
+                    leveleGoreArtisMiktari = 0.6;
                     break;
                 case "Zor":
                     arabalarinHareketHizi = 13;
                     yolHizi = 13;
+                    leveleGoreArtisMiktari = 0.8;
                     break;
                 case "Çok Zor":
                     arabalarinHareketHizi = 15;
                     yolHizi = 15;
+                    leveleGoreArtisMiktari = 1;
                     break;
             }
+
 
             //Araba hýzlarý
             pbAraba1.Top += arabalarinHareketHizi;
@@ -214,7 +224,7 @@ namespace TurboDriftTrafficDodge.UI
             if ((pbArabam.Bounds.IntersectsWith(pbAraba1.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba2.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba3.Bounds) || pbArabam.Bounds.IntersectsWith(pbAraba4.Bounds)))
             {
                 Oyuncu oynayanOyuncu = oyuncular.Last(); //Son oyuncumu alýr.
-                oynayanOyuncu.Skor = kazanilanPuan;
+                oynayanOyuncu.Skor = ((int)kazanilanPuan);
                 JSONDosya.OyuncuGuncelle(oyuncular);
                 ListViewGuncelle();
 
@@ -240,7 +250,7 @@ namespace TurboDriftTrafficDodge.UI
                 tmrHareket.Stop();
 
                 //Yeni oyun 
-                DialogResult dr = MessageBox.Show($"Tebrikler Puanýnýz : {kazanilanPuan} \nYeni bir yarýþ yapmak ister misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show($"Tebrikler Puanýnýz : {((int)kazanilanPuan)} \nYeni bir yarýþ yapmak ister misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
                     YeniOyun();
