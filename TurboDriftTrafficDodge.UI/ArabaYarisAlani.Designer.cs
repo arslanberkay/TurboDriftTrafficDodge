@@ -252,7 +252,7 @@
             btnAnaSayfa.TabIndex = 1;
             btnAnaSayfa.Text = "Ana Sayfa";
             btnAnaSayfa.UseVisualStyleBackColor = true;
-            btnAnaSayfa.Click += btnOyunuBaslat_Click;
+            btnAnaSayfa.Click += btnAnaSayfa_Click;
             // 
             // ArabaYarisAlani
             // 

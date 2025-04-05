@@ -55,9 +55,9 @@ namespace TurboDriftTrafficDodge.UI
         private void OyunuBaslat()
         {
             SesCal("oyunsesi.wav");
-            KupaGoster(false);
             tmrHareket.Start();
             btnOyunuBaslat.Visible = false;
+            btnAnaSayfa.Visible = false;
         }
 
         private void tmrHareket_Tick(object sender, EventArgs e)
@@ -189,10 +189,11 @@ namespace TurboDriftTrafficDodge.UI
                 oynayanOyuncu.Skor = kazanilanPuan;
                 JSONDosya.OyuncuGuncelle(oyuncular);
                 ListViewGuncelle();
-                
+
 
                 SesCal("kazasesi.wav");
                 btnOyunuBaslat.Visible = true;
+                btnAnaSayfa.Visible = true;
 
                 //Patlama efekti ayarlarý
                 pbPatlama.Visible = true;
@@ -215,7 +216,6 @@ namespace TurboDriftTrafficDodge.UI
                 if (dr == DialogResult.Yes)
                 {
                     YeniOyun();
-                    OyunuBaslat();
                 }
                 else
                 {
@@ -257,7 +257,10 @@ namespace TurboDriftTrafficDodge.UI
             pbAraba3.Location = new Point(rnd.Next(450, 600), rnd.Next(100));
             pbAraba4.Location = new Point(rnd.Next(650, 800), rnd.Next(100));
 
+            solHareket = false;
+            sagHareket = false;
             pbPatlama.Visible = false;
+            KupaGoster(false);
             kazanilanPuan = 0;
         }
 
@@ -293,9 +296,11 @@ namespace TurboDriftTrafficDodge.UI
             lstvOyuncular.Columns.Add("Skor", 100);
         }
 
-
-
-
-
+        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        {
+            GirisEkrani girisEkrani = new GirisEkrani();
+            girisEkrani.Show();
+            this.Hide();
+        }
     }
 }
