@@ -65,14 +65,14 @@
             btnOyunuBaslat.Margin = new Padding(4);
             btnOyunuBaslat.Name = "btnOyunuBaslat";
             btnOyunuBaslat.Size = new Size(340, 81);
-            btnOyunuBaslat.TabIndex = 1;
+            btnOyunuBaslat.TabIndex = 2;
             btnOyunuBaslat.Text = "Oyunu Başlat";
             btnOyunuBaslat.UseVisualStyleBackColor = true;
             btnOyunuBaslat.Click += btnOyunuBaslat_Click;
             // 
             // tmrHareket
             // 
-            tmrHareket.Interval = 10;
+            tmrHareket.Interval = 5;
             tmrHareket.Tick += tmrHareket_Tick;
             // 
             // pnlYarisAlani
@@ -91,7 +91,7 @@
             pnlYarisAlani.Location = new Point(37, 12);
             pnlYarisAlani.Name = "pnlYarisAlani";
             pnlYarisAlani.Size = new Size(1034, 884);
-            pnlYarisAlani.TabIndex = 2;
+            pnlYarisAlani.TabIndex = 1;
             // 
             // pbKupa
             // 
@@ -201,7 +201,7 @@
             label1.Location = new Point(40, 899);
             label1.Name = "label1";
             label1.Size = new Size(152, 28);
-            label1.TabIndex = 3;
+            label1.TabIndex = 6;
             label1.Text = "Kazanılan Puan :";
             // 
             // lblKazanilanPuan
@@ -211,7 +211,7 @@
             lblKazanilanPuan.Location = new Point(198, 899);
             lblKazanilanPuan.Name = "lblKazanilanPuan";
             lblKazanilanPuan.Size = new Size(23, 28);
-            lblKazanilanPuan.TabIndex = 3;
+            lblKazanilanPuan.TabIndex = 0;
             lblKazanilanPuan.Text = "0";
             // 
             // label2
@@ -221,7 +221,7 @@
             label2.Location = new Point(40, 945);
             label2.Name = "label2";
             label2.Size = new Size(152, 28);
-            label2.TabIndex = 3;
+            label2.TabIndex = 7;
             label2.Text = "En Yüksek Skor :";
             // 
             // lblEnYuksekSkor
@@ -237,10 +237,11 @@
             // lstvOyuncular
             // 
             lstvOyuncular.BackColor = Color.DimGray;
+            lstvOyuncular.Enabled = false;
             lstvOyuncular.Location = new Point(1111, 12);
             lstvOyuncular.Name = "lstvOyuncular";
             lstvOyuncular.Size = new Size(331, 884);
-            lstvOyuncular.TabIndex = 4;
+            lstvOyuncular.TabIndex = 2;
             lstvOyuncular.UseCompatibleStateImageBehavior = false;
             // 
             // btnAnaSayfa
@@ -249,7 +250,7 @@
             btnAnaSayfa.Margin = new Padding(4);
             btnAnaSayfa.Name = "btnAnaSayfa";
             btnAnaSayfa.Size = new Size(331, 81);
-            btnAnaSayfa.TabIndex = 1;
+            btnAnaSayfa.TabIndex = 4;
             btnAnaSayfa.Text = "Ana Sayfa";
             btnAnaSayfa.UseVisualStyleBackColor = true;
             btnAnaSayfa.Click += btnAnaSayfa_Click;

@@ -64,26 +64,57 @@ namespace TurboDriftTrafficDodge.UI
             kazanilanPuan++;
             lblKazanilanPuan.Text = kazanilanPuan.ToString();
 
-            //Level sistemi (Kolaydan-Zora)
-            if (kazanilanPuan < 500 )
+
+            //Level sistemi 
+            switch (oyuncular.Last().Zorluk)
             {
-                arabalarinHareketHizi = 5;
-                yolHizi = 5;
-            }
-            else if (kazanilanPuan > 500 && kazanilanPuan < 1250)
-            {
-                arabalarinHareketHizi = 7;
-                yolHizi = 7;
-            }
-            else if (kazanilanPuan > 1250 && kazanilanPuan < 2000)
-            {
-                arabalarinHareketHizi = 10;
-                yolHizi = 10;
-            }
-            else if (kazanilanPuan > 2000)
-            {
-                arabalarinHareketHizi = 13;
-                yolHizi = 13;
+                case "Kolaydan Zora":
+                    if (kazanilanPuan < 500)
+                    {
+                        arabalarinHareketHizi = 5;
+                        yolHizi = 5;
+                    }
+                    else if (kazanilanPuan >= 500 && kazanilanPuan < 1250)
+                    {
+                        arabalarinHareketHizi = 7;
+                        yolHizi = 7;
+                    }
+                    else if (kazanilanPuan >= 1250 && kazanilanPuan < 2000)
+                    {
+                        arabalarinHareketHizi = 10;
+                        yolHizi = 10;
+                    }
+                    else if (kazanilanPuan >= 2000 && kazanilanPuan < 2700)
+                    {
+                        arabalarinHareketHizi = 13;
+                        yolHizi = 13;
+                    }
+                    else if (kazanilanPuan >= 2700)
+                    {
+                        arabalarinHareketHizi = 15;
+                        yolHizi = 15;
+                    }
+                    break;
+                case "Çok Kolay":
+                    arabalarinHareketHizi = 5;
+                    yolHizi = 5;
+                    break;
+                case "Kolay":
+                    arabalarinHareketHizi = 7;
+                    yolHizi = 7;
+                    break;
+                case "Orta":
+                    arabalarinHareketHizi = 10;
+                    yolHizi = 10;
+                    break;
+                case "Zor":
+                    arabalarinHareketHizi = 13;
+                    yolHizi = 13;
+                    break;
+                case "Çok Zor":
+                    arabalarinHareketHizi = 15;
+                    yolHizi = 15;
+                    break;
             }
 
             //Araba hýzlarý

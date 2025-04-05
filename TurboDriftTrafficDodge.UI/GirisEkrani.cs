@@ -27,7 +27,7 @@ namespace TurboDriftTrafficDodge.UI
                 MessageBox.Show("Kullanıcı adı boş olmamalıdır!");
                 return;
             }
-            if (tbZorluk.Value == 0)
+            if (tbZorluk.Value == 0 && !chkKolaydanZora.Checked)
             {
                 MessageBox.Show("Geçersiz zorluk seviyesi");
                 return;
